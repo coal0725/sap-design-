@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+
+<html lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SAP 심사원 플랫폼 - 마이페이지</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&amp;family=JetBrains+Mono:wght@500&amp;family=Hanken+Grotesk:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed-variant": "#584400",
+                        "tertiary-container": "#00331d",
+                        "on-secondary-fixed": "#241a00",
+                        "on-error": "#ffffff",
+                        "surface-tint": "#4e5d86",
+                        "surface-container-low": "#f0f3ff",
+                        "primary": "#1A2A4F",
+                        "surface-container-lowest": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "inverse-surface": "#273141",
+                        "on-tertiary-container": "#4fa375",
+                        "on-primary-fixed": "#081a3e",
+                        "on-tertiary": "#ffffff",
+                        "inverse-primary": "#b6c6f4",
+                        "primary-fixed": "#dae2ff",
+                        "inverse-on-surface": "#ebf1ff",
+                        "on-surface-variant": "#45464e",
+                        "tertiary-fixed": "#9ff5c1",
+                        "on-tertiary-fixed-variant": "#005231",
+                        "on-surface": "#121c2c",
+                        "on-background": "#121c2c",
+                        "secondary-fixed": "#ffe08e",
+                        "error": "#ba1a1a",
+                        "outline": "#75777f",
+                        "surface-variant": "#d9e3f9",
+                        "on-primary-fixed-variant": "#37466c",
+                        "on-primary": "#ffffff",
+                        "primary-fixed-dim": "#b6c6f4",
+                        "surface": "#f9f9ff",
+                        "tertiary": "#001c0e",
+                        "secondary-fixed-dim": "#ecc246",
+                        "outline-variant": "#c5c6cf",
+                        "on-secondary-container": "#735a00",
+                        "surface-container-highest": "#d9e3f9",
+                        "surface-container": "#e7eeff",
+                        "background": "#f9f9ff",
+                        "on-primary-container": "#8392bd",
+                        "secondary-container": "#C9A227",
+                        "surface-container-high": "#dee8ff",
+                        "surface-bright": "#f9f9ff",
+                        "secondary": "#C9A227",
+                        "on-tertiary-fixed": "#002111",
+                        "on-error-container": "#93000a",
+                        "surface-dim": "#d0daf0",
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed-dim": "#83d8a6",
+                        "primary-container": "#1a2a4f"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "2px",
+                        "lg": "4px",
+                        "xl": "8px",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "unit": "4px",
+                        "header-height": "64px",
+                        "sidebar-width": "260px",
+                        "margin-mobile": "16px",
+                        "margin-desktop": "32px",
+                        "container-max": "1440px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["JetBrains Mono", "monospace"],
+                        "display-lg": ["Hanken Grotesk", "Noto Sans KR"],
+                        "headline-sm": ["Hanken Grotesk", "Noto Sans KR"],
+                        "headline-md": ["Hanken Grotesk", "Noto Sans KR"],
+                        "label-sm": ["JetBrains Mono", "monospace"],
+                        "body-lg": ["Noto Sans KR", "sans-serif"],
+                        "body-sm": ["Noto Sans KR", "sans-serif"],
+                        "body-md": ["Noto Sans KR", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f9f9ff; }
+        .sidebar-active {
+            position: relative;
+            background-color: #37466c;
+            color: #ffffff;
+            font-weight: 700;
+        }
+        .sidebar-active::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background-color: #C9A227;
+        }
+        .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #d1d5db; border-radius: 2px; }
+        .table-row-hover:hover { background-color: #f8fafc; }
+        
+        .modal-open { overflow: hidden; }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen text-on-surface">
+<!-- Top Navigation Bar (Header) -->
+<header class="flex justify-between items-center h-header-height w-full px-margin-desktop sticky top-0 z-40 bg-white border-b border-outline-variant">
+<div class="flex items-center gap-2">
+<span class="text-headline-sm font-bold text-primary">SAP 심사원 플랫폼</span>
+<span class="text-label-md text-outline px-2 border-l border-outline-variant h-4 flex items-center">삼성표준인증원</span>
+</div>
+<div class="flex items-center gap-4">
+<button class="w-10 h-10 flex items-center justify-center hover:bg-surface-container-low transition-colors rounded-full relative">
+<span class="material-symbols-outlined text-on-surface-variant">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full"></span>
+</button>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant bg-surface-container-low flex items-center justify-center">
+<span class="material-symbols-outlined text-outline text-[20px]">person</span>
+</div>
+</div>
+</header>
+<div class="flex flex-1">
+<!-- Side Navigation Bar -->
+<aside class="flex flex-col w-sidebar-width bg-primary text-on-primary sticky top-header-height h-[calc(100vh-64px)] z-30">
+<div class="p-6">
+<div class="text-headline-sm font-headline-md text-on-primary mb-1">삼성표준인증원</div>
+<div class="text-label-md font-label-md opacity-70">SAP 심사원 플랫폼</div>
+</div>
+<nav class="flex-1 mt-4 overflow-y-auto custom-scrollbar">
+<a class="sidebar-active flex items-center gap-3 px-6 py-4 transition-all hover:bg-on-primary-fixed-variant/50" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="text-body-md font-body-md">마이페이지</span>
+</a>
+<a class="flex items-center gap-3 px-6 py-4 text-on-primary/70 transition-all hover:text-white hover:bg-on-primary-fixed-variant/30" href="#">
+<span class="material-symbols-outlined">calendar_month</span>
+<span class="text-body-md font-body-md">심사일정</span>
+</a>
+<a class="flex items-center gap-3 px-6 py-4 text-on-primary/70 transition-all hover:text-white hover:bg-on-primary-fixed-variant/30" href="#">
+<span class="material-symbols-outlined">description</span>
+<span class="text-body-md font-body-md">심사보고서</span>
+</a>
+<a class="flex items-center gap-3 px-6 py-4 text-on-primary/70 transition-all hover:text-white hover:bg-on-primary-fixed-variant/30" href="#">
+<span class="material-symbols-outlined">fact_check</span>
+<span class="text-body-md font-body-md">검증관리</span>
+</a>
+<a class="flex items-center gap-3 px-6 py-4 text-on-primary/70 transition-all hover:text-white hover:bg-on-primary-fixed-variant/30" href="#">
+<span class="material-symbols-outlined">campaign</span>
+<span class="text-body-md font-body-md">게시판</span>
+</a>
+</nav>
+<div class="p-4 border-t border-white/10">
+<div class="flex flex-col gap-1 mb-6">
+<a class="flex items-center gap-3 px-2 py-2 text-on-primary/60 text-body-sm hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined text-[18px]">settings</span>
+<span>설정</span>
+</a>
+<a class="flex items-center gap-3 px-2 py-2 text-on-primary/60 text-body-sm hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined text-[18px]">logout</span>
+<span>로그아웃</span>
+</a>
+</div>
+<div class="flex items-center gap-3 p-3 bg-white/5 rounded-lg">
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center overflow-hidden">
+<span class="material-symbols-outlined text-white text-[24px]">person</span>
+</div>
+<div>
+<div class="text-body-sm font-bold text-white">김심사</div>
+<div class="text-[11px] text-on-primary/60">선임심사원</div>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 min-h-screen bg-background">
+<!-- Page Canvas -->
+<div class="p-gutter max-w-[1600px] w-full mx-auto space-y-8">
+<!-- Title Section -->
+<div>
+<h1 class="text-display-lg font-display-lg text-primary">마이페이지</h1>
+<p class="text-body-md text-on-surface-variant">기본정보와 자격정보를 확인할 수 있습니다.</p>
+</div>
+<!-- Bento Grid Layout (Reorganized to Stack) -->
+<div class="flex flex-col gap-8">
+<!-- Section 1: Basic Information Card -->
+<section class="bg-white border border-outline-variant p-6 flex flex-col relative">
+<div class="flex justify-between items-start mb-6">
+<h2 class="text-headline-sm font-bold text-primary flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary">person_check</span>
+                            기본 정보
+                        </h2>
+<button class="px-5 py-2 bg-secondary text-white text-body-md font-bold hover:brightness-110 transition-all rounded-[2px]" onclick="openModal()">수정</button>
+</div>
+<div class="flex flex-col gap-6">
+<div class="flex gap-8 items-start">
+<div class="w-[120px] h-[160px] bg-surface-container-low flex items-center justify-center shrink-0 border border-outline-variant/50 rounded-[2px] overflow-hidden relative">
+<span class="material-symbols-outlined text-outline text-[48px]">person</span>
+</div>
+<div class="flex-1">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
+<div class="flex items-center gap-4 border-b border-surface-container pb-2">
+<label class="text-label-sm text-outline uppercase tracking-wider w-20 shrink-0">한글이름</label>
+<span class="text-body-lg font-bold">김심사</span>
+</div>
+<div class="flex items-center gap-4 border-b border-surface-container pb-2">
+<label class="text-label-sm text-outline uppercase tracking-wider w-20 shrink-0">영문이름</label>
+<span class="text-body-lg font-bold">KIM SIMSA</span>
+</div>
+<div class="flex items-center gap-4 border-b border-surface-container pb-2">
+<label class="text-label-sm text-outline uppercase tracking-wider w-20 shrink-0">구분</label>
+<span class="text-body-lg">상근</span>
+</div>
+<div class="flex items-center gap-4 border-b border-surface-container pb-2">
+<label class="text-label-sm text-outline uppercase tracking-wider w-20 shrink-0">SSR등급</label>
+<span class="text-body-lg font-bold text-primary">선임심사원</span>
+</div>
+<div class="flex items-center gap-4 border-b border-surface-container pb-2">
+<label class="text-label-sm text-outline uppercase tracking-wider w-20 shrink-0">휴대전화</label>
+<span class="text-body-lg font-label-md">010-1234-5678</span>
+</div>
+<div class="flex items-center gap-4 border-b border-surface-container pb-2">
+<label class="text-label-sm text-outline uppercase tracking-wider w-20 shrink-0">이메일</label>
+<span class="text-body-lg font-label-md text-primary">auditor@ssr.or.kr</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Hidden Extra Details -->
+<div class="hidden pt-6 border-t border-outline-variant/50 space-y-8" id="more-info-section">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
+<div class="flex items-center gap-4 border-b border-surface-container pb-2">
+<label class="text-label-sm text-outline uppercase tracking-wider w-28 shrink-0">주민등록번호(앞)</label>
+<span class="text-body-lg font-label-md">960101</span>
+</div>
+<div class="flex items-center gap-4 border-b border-surface-container pb-2">
+<label class="text-label-sm text-outline uppercase tracking-wider w-20 shrink-0">생년월일</label>
+<span class="text-body-lg font-label-md">1996-01-01</span>
+</div>
+<div class="flex items-center gap-4 border-b border-surface-container pb-2">
+<label class="text-label-sm text-outline uppercase tracking-wider w-28 shrink-0">유선전화</label>
+<span class="text-body-lg font-label-md">02-123-4567</span>
+</div>
+<div class="flex items-center gap-4 border-b border-surface-container pb-2">
+<label class="text-label-sm text-outline uppercase tracking-wider w-20 shrink-0">팩스</label>
+<span class="text-body-lg font-label-md">02-123-4568</span>
+</div>
+<div class="flex items-center gap-4 border-b border-surface-container pb-2 md:col-span-2">
+<label class="text-label-sm text-outline uppercase tracking-wider w-28 shrink-0">주소</label>
+<span class="text-body-lg">서울특별시 서초구 삼성로 123 심사관리동 4층</span>
+</div>
+</div>
+<div>
+<h3 class="text-label-md font-bold text-primary uppercase mb-3 bg-surface-container-low px-3 py-1 inline-block rounded-[2px]">소속 정보</h3>
+<table class="w-full text-left border-collapse border border-outline-variant/30 text-sm">
+<thead>
+<tr class="bg-surface-container-low border-b border-outline-variant/30">
+<th class="px-3 py-2 font-medium text-outline">소속명</th>
+<th class="px-3 py-2 font-medium text-outline">부서</th>
+<th class="px-3 py-2 font-medium text-outline">직급</th>
+<th class="px-3 py-2 font-medium text-outline">상태</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="px-3 py-2 border-b border-outline-variant/30">삼성표준인증원</td>
+<td class="px-3 py-2 border-b border-outline-variant/30">심사팀</td>
+<td class="px-3 py-2 border-b border-outline-variant/30">책임</td>
+<td class="px-3 py-2 border-b border-outline-variant/30">재직</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<h3 class="text-label-md font-bold text-primary uppercase mb-3 bg-surface-container-low px-3 py-1 inline-block rounded-[2px]">학력 사항</h3>
+<table class="w-full text-left border-collapse border border-outline-variant/30 text-sm">
+<thead>
+<tr class="bg-surface-container-low border-b border-outline-variant/30">
+<th class="px-3 py-2 font-medium text-outline">학교명</th>
+<th class="px-3 py-2 font-medium text-outline">전공</th>
+<th class="px-3 py-2 font-medium text-outline">기간</th>
+<th class="px-3 py-2 font-medium text-outline">졸업구분</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="px-3 py-2 border-b border-outline-variant/30">한국대학교</td>
+<td class="px-3 py-2 border-b border-outline-variant/30">경영학</td>
+<td class="px-3 py-2 border-b border-outline-variant/30 font-label-md">2015-03 ~ 2019-02</td>
+<td class="px-3 py-2 border-b border-outline-variant/30">졸업</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<h3 class="text-label-md font-bold text-primary uppercase mb-3 bg-surface-container-low px-3 py-1 inline-block rounded-[2px]">경력 사항</h3>
+<table class="w-full text-left border-collapse border border-outline-variant/30 text-sm">
+<thead>
+<tr class="bg-surface-container-low border-b border-outline-variant/30">
+<th class="px-3 py-2 font-medium text-outline">회사명</th>
+<th class="px-3 py-2 font-medium text-outline">부서/직급</th>
+<th class="px-3 py-2 font-medium text-outline">기간</th>
+<th class="px-3 py-2 font-medium text-outline">담당업무</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="px-3 py-2 border-b border-outline-variant/30">품질관리(주)</td>
+<td class="px-3 py-2 border-b border-outline-variant/30">QA팀 / 대리</td>
+<td class="px-3 py-2 border-b border-outline-variant/30 font-label-md">2019-03 ~ 2023-02</td>
+<td class="px-3 py-2 border-b border-outline-variant/30">품질경영시스템 기획</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<h3 class="text-label-md font-bold text-primary uppercase mb-3 bg-surface-container-low px-3 py-1 inline-block rounded-[2px]">자격증</h3>
+<table class="w-full text-left border-collapse border border-outline-variant/30 text-sm">
+<thead>
+<tr class="bg-surface-container-low border-b border-outline-variant/30">
+<th class="px-3 py-2 font-medium text-outline">자격종류</th>
+<th class="px-3 py-2 font-medium text-outline">자격증명</th>
+<th class="px-3 py-2 font-medium text-outline">발급기관</th>
+<th class="px-3 py-2 font-medium text-outline">자격번호</th>
+<th class="px-3 py-2 font-medium text-outline">취득일</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="px-3 py-2 border-b border-outline-variant/30">국가공인</td>
+<td class="px-3 py-2 border-b border-outline-variant/30">품질경영기사</td>
+<td class="px-3 py-2 border-b border-outline-variant/30">한국산업인력공단</td>
+<td class="px-3 py-2 border-b border-outline-variant/30 font-label-md">21201234567M</td>
+<td class="px-3 py-2 border-b border-outline-variant/30 font-label-md">2018-08-15</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<button class="w-full text-center py-3 mt-4 text-label-md font-bold text-on-surface-variant hover:text-primary hover:bg-surface-container-low transition-colors flex items-center justify-center gap-1 rounded-[2px]" id="toggle-more-btn" onclick="toggleMoreInfo()">
+                            더보기 <span class="material-symbols-outlined text-[18px]" id="toggle-icon">expand_more</span>
+</button>
+</div>
+</section>
+<!-- Section 2: Qualification Information Card -->
+<section class="bg-white border border-outline-variant p-6 flex flex-col"><div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6"><h2 class="text-headline-sm font-bold text-primary flex items-center gap-2"><span class="material-symbols-outlined text-secondary">verified</span>자격 정보</h2><div class="flex gap-2"><button class="px-4 py-2 border border-secondary text-secondary text-label-md font-bold hover:bg-secondary/5 transition-all rounded-[2px]">자격 갱신신청</button><button class="px-4 py-2 bg-secondary text-white text-label-md font-bold hover:brightness-110 transition-all rounded-[2px] shadow-sm">자격 신규신청</button></div></div><div class="overflow-x-auto"><table class="w-full text-left border-collapse"><thead class="bg-surface-container-low"><tr class="border-b border-outline-variant/30"><th class="px-4 py-3 text-label-sm font-bold text-primary uppercase whitespace-nowrap">규격</th><th class="px-4 py-3 text-label-sm font-bold text-primary uppercase whitespace-nowrap">버전</th><th class="px-4 py-3 text-label-sm font-bold text-primary uppercase whitespace-nowrap">적격성</th><th class="px-4 py-3 text-label-sm font-bold text-primary uppercase whitespace-nowrap">등록기관</th><th class="px-4 py-3 text-label-sm font-bold text-primary uppercase whitespace-nowrap">등록번호</th><th class="px-4 py-3 text-label-sm font-bold text-primary uppercase whitespace-nowrap">납부 만료일</th><th class="px-4 py-3 text-label-sm font-bold text-primary uppercase whitespace-nowrap">갱신잔여일</th><th class="px-4 py-3 text-label-sm font-bold text-primary uppercase whitespace-nowrap">3년 갱신일</th><th class="px-4 py-3 text-label-sm font-bold text-primary uppercase whitespace-nowrap">자격증</th></tr></thead><tbody class="divide-y divide-outline-variant/30"><tr class="table-row-hover"><td class="px-4 py-4 text-body-md font-bold whitespace-nowrap">ISO 9001</td><td class="px-4 py-4 text-body-md whitespace-nowrap">2015</td><td class="px-4 py-4 whitespace-nowrap"><span class="px-2 py-0.5 bg-green-50 text-green-700 text-[11px] font-bold border border-green-200 rounded-[2px]">자격유지</span></td><td class="px-4 py-4 text-body-md whitespace-nowrap">PCAA</td><td class="px-4 py-4 font-label-md text-on-surface-variant whitespace-nowrap">PC1699</td><td class="px-4 py-4 font-label-md text-on-surface-variant whitespace-nowrap">2026-12-31</td><td class="px-4 py-4 font-label-md text-on-surface-variant whitespace-nowrap">D-205</td><td class="px-4 py-4 font-label-md text-on-surface-variant whitespace-nowrap">2027-05-20</td><td class="px-4 py-4 whitespace-nowrap"><div class="flex items-center gap-1 text-secondary hover:underline cursor-pointer"><span class="material-symbols-outlined text-[18px]">description</span><span class="text-label-sm">첨부됨</span></div></td></tr><tr class="table-row-hover"><td class="px-4 py-4 text-body-md font-bold whitespace-nowrap">ISO 14001</td><td class="px-4 py-4 text-body-md whitespace-nowrap">2015</td><td class="px-4 py-4 whitespace-nowrap"><span class="px-2 py-0.5 bg-green-50 text-green-700 text-[11px] font-bold border border-green-200 rounded-[2px]">자격유지</span></td><td class="px-4 py-4 text-body-md whitespace-nowrap">IQCS</td><td class="px-4 py-4 font-label-md text-on-surface-variant whitespace-nowrap">KR100781</td><td class="px-4 py-4 font-label-md text-on-surface-variant whitespace-nowrap">2026-06-15</td><td class="px-4 py-4 font-label-md text-error whitespace-nowrap">-15</td><td class="px-4 py-4 font-label-md text-on-surface-variant whitespace-nowrap">2026-09-01</td><td class="px-4 py-4 whitespace-nowrap"><div class="flex items-center gap-1 text-secondary hover:underline cursor-pointer"><span class="material-symbols-outlined text-[18px]">description</span><span class="text-label-sm">첨부됨</span></div></td></tr></tbody></table></div><button class="w-full text-center py-3 mt-4 text-label-md font-bold text-on-surface-variant hover:text-primary hover:bg-surface-container-low transition-colors flex items-center justify-center gap-1 rounded-[2px]">더보기 <span class="material-symbols-outlined text-[18px]">expand_more</span></button></section>
+<!-- Section 3: Code Information Card -->
+<section class="bg-white border border-outline-variant p-6 flex flex-col"><div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6"><h2 class="text-headline-sm font-bold text-primary flex items-center gap-2"><span class="material-symbols-outlined text-secondary">qr_code_2</span>코드 정보</h2><button class="px-4 py-2 bg-secondary text-white text-label-md font-bold hover:brightness-110 transition-all rounded-[2px] shadow-sm">코드 신규신청</button></div><div class="overflow-x-auto"><table class="w-full text-left border-collapse"><thead class="bg-surface-container-low"><tr class="border-b border-outline-variant/30"><th class="px-4 py-3 text-label-sm font-bold text-primary uppercase whitespace-nowrap">규격</th><th class="px-4 py-3 text-label-sm font-bold text-primary uppercase whitespace-nowrap">대분류</th><th class="px-4 py-3 text-label-sm font-bold text-primary uppercase whitespace-nowrap">세분류</th><th class="px-4 py-3 text-label-sm font-bold text-primary uppercase text-center whitespace-nowrap">상태</th></tr></thead><tbody class="divide-y divide-outline-variant/30"><tr class="table-row-hover"><td class="px-4 py-4 text-body-md font-bold whitespace-nowrap">ISO 9001</td><td class="px-4 py-4 text-body-md whitespace-nowrap">03, 07</td><td class="px-4 py-4 text-body-md whitespace-nowrap">QMS 03A, 07A</td><td class="px-4 py-4 text-center whitespace-nowrap"><span class="px-2 py-0.5 bg-green-50 text-green-700 text-[11px] font-bold border border-green-200 rounded-[2px]">보유</span></td></tr><tr class="table-row-hover"><td class="px-4 py-4 text-body-md font-bold whitespace-nowrap">ISO 14001</td><td class="px-4 py-4 text-body-md whitespace-nowrap">05</td><td class="px-4 py-4 text-body-md whitespace-nowrap">EMS 05B</td><td class="px-4 py-4 text-center whitespace-nowrap"><span class="px-2 py-0.5 bg-green-50 text-green-700 text-[11px] font-bold border border-green-200 rounded-[2px]">보유</span></td></tr><tr class="table-row-hover"><td class="px-4 py-4 text-body-md font-bold whitespace-nowrap">ISO 22000</td><td class="px-4 py-4 text-body-md whitespace-nowrap">C 식품제조</td><td class="px-4 py-4 text-body-md whitespace-nowrap">CIV</td><td class="px-4 py-4 text-center whitespace-nowrap"><span class="px-2 py-0.5 bg-green-50 text-green-700 text-[11px] font-bold border border-green-200 rounded-[2px]">보유</span></td></tr></tbody></table></div><button class="w-full text-center py-3 mt-4 text-label-md font-bold text-on-surface-variant hover:text-primary hover:bg-surface-container-low transition-colors flex items-center justify-center gap-1 rounded-[2px]">더보기 <span class="material-symbols-outlined text-[18px]">expand_more</span></button></section>
+<!-- Section 4: Processing History Card -->
+<section class="bg-white border border-outline-variant p-6">
+<div class="flex justify-between items-center mb-6">
+<h2 class="text-headline-sm font-bold text-primary flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary">history</span>
+                            신청 처리 현황
+                        </h2>
+<a class="text-label-md text-on-surface-variant hover:text-primary underline flex items-center gap-1" href="#">
+                            전체보기 <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="flex items-center gap-4 p-4 border border-outline-variant/50 hover:border-primary/30 transition-all rounded-[2px]">
+<div class="w-12 h-12 bg-surface-container-low rounded-full flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">update</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<span class="text-label-sm text-outline font-label-md">2024-03-01</span>
+<span class="text-[11px] bg-green-600 text-white px-1.5 py-0.5 font-bold rounded-[2px]">승인완료</span>
+</div>
+<div class="text-body-md font-bold text-primary mt-0.5">자격 갱신 (ISO 9001)</div>
+</div>
+</div>
+<div class="flex items-center gap-4 p-4 border border-outline-variant/50 hover:border-primary/30 transition-all rounded-[2px]">
+<div class="w-12 h-12 bg-surface-container-low rounded-full flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">add_moderator</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<span class="text-label-sm text-outline font-label-md">2024-02-15</span>
+<span class="text-[11px] bg-secondary text-white px-1.5 py-0.5 font-bold rounded-[2px]">심사중</span>
+</div>
+<div class="text-body-md font-bold text-primary mt-0.5">신규 자격 신청 (ISO 45001)</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Additional Info / Help Cards -->
+<div class="grid grid-cols-1 gap-6 pb-gutter">
+<div class="p-6 bg-secondary text-white flex items-center justify-between rounded-[2px]">
+<div>
+<h3 class="text-headline-sm font-bold mb-1">차기 심사 일정</h3>
+<p class="text-body-sm opacity-90">배정된 심사 일정을 미리 확인하세요.</p>
+</div>
+<button class="bg-white text-secondary px-6 py-2 text-label-md font-bold hover:bg-opacity-90 transition-all rounded-[2px]">일정 보기</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+<!-- Modal Overlay -->
+<div class="fixed inset-0 z-50 flex items-center justify-center bg-black/50 hidden opacity-0 transition-opacity duration-300" id="edit-modal">
+<div class="bg-white w-full max-w-4xl max-h-[90vh] flex flex-col rounded-[4px] shadow-2xl overflow-hidden transform scale-95 transition-transform duration-300">
+<!-- Modal Header -->
+<div class="flex justify-between items-center bg-primary px-6 py-4 text-white">
+<h2 class="text-headline-sm font-bold">기본 정보 수정</h2>
+<button class="text-white/70 hover:text-white transition-colors" onclick="closeModal()">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<!-- Modal Body -->
+<div class="flex-1 overflow-y-auto p-6 space-y-8 custom-scrollbar">
+<form class="space-y-8">
+<!-- Profile Photo & Basic -->
+<div class="flex gap-8">
+<div class="w-[120px] shrink-0 flex flex-col gap-2">
+<div class="w-full h-[160px] bg-surface-container-low flex items-center justify-center border border-outline-variant rounded-[2px] relative overflow-hidden group cursor-pointer hover:border-primary transition-colors">
+<span class="material-symbols-outlined text-outline text-[48px]">person</span>
+<div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-white">photo_camera</span>
+</div>
+</div>
+<button class="text-label-sm text-secondary font-bold hover:underline" type="button">사진 변경</button>
+</div>
+<div class="flex-1 grid grid-cols-2 gap-4">
+<div class="flex flex-col gap-1">
+<label class="text-label-sm text-on-surface-variant font-bold">한글이름</label>
+<input class="w-full border-outline-variant rounded-[2px] px-3 py-2 text-body-md focus:border-primary focus:ring-1 focus:ring-primary" type="text" value="김심사"/>
+</div>
+<div class="flex flex-col gap-1">
+<label class="text-label-sm text-on-surface-variant font-bold">영문이름</label>
+<input class="w-full border-outline-variant rounded-[2px] px-3 py-2 text-body-md focus:border-primary focus:ring-1 focus:ring-primary" type="text" value="KIM SIMSA"/>
+</div>
+<div class="flex flex-col gap-1">
+<label class="text-label-sm text-on-surface-variant font-bold">휴대전화</label>
+<input class="w-full border-outline-variant rounded-[2px] px-3 py-2 text-body-md font-label-md focus:border-primary focus:ring-1 focus:ring-primary" type="text" value="010-1234-5678"/>
+</div>
+<div class="flex flex-col gap-1">
+<label class="text-label-sm text-on-surface-variant font-bold">이메일</label>
+<input class="w-full border-outline-variant rounded-[2px] px-3 py-2 text-body-md font-label-md focus:border-primary focus:ring-1 focus:ring-primary" type="email" value="auditor@ssr.or.kr"/>
+</div>
+<div class="flex flex-col gap-1">
+<label class="text-label-sm text-on-surface-variant font-bold">주민등록번호(앞자리)</label>
+<input class="w-full border-outline-variant rounded-[2px] px-3 py-2 text-body-md font-label-md focus:border-primary focus:ring-1 focus:ring-primary" type="text" value="960101"/>
+</div>
+<div class="flex flex-col gap-1">
+<label class="text-label-sm text-on-surface-variant font-bold">생년월일</label>
+<input class="w-full border-outline-variant rounded-[2px] px-3 py-2 text-body-md font-label-md focus:border-primary focus:ring-1 focus:ring-primary" type="date" value="1996-01-01"/>
+</div>
+</div>
+</div>
+<!-- Contact Info -->
+<div>
+<h3 class="text-label-md font-bold text-primary border-b border-primary pb-2 mb-4">연락처 정보</h3>
+<div class="grid grid-cols-2 gap-4">
+<div class="flex flex-col gap-1">
+<label class="text-label-sm text-on-surface-variant font-bold">유선전화</label>
+<input class="w-full border-outline-variant rounded-[2px] px-3 py-2 text-body-md font-label-md focus:border-primary focus:ring-1 focus:ring-primary" type="text" value="02-123-4567"/>
+</div>
+<div class="flex flex-col gap-1">
+<label class="text-label-sm text-on-surface-variant font-bold">팩스</label>
+<input class="w-full border-outline-variant rounded-[2px] px-3 py-2 text-body-md font-label-md focus:border-primary focus:ring-1 focus:ring-primary" type="text" value="02-123-4568"/>
+</div>
+<div class="flex flex-col gap-1 col-span-2">
+<label class="text-label-sm text-on-surface-variant font-bold">주소</label>
+<input class="w-full border-outline-variant rounded-[2px] px-3 py-2 text-body-md focus:border-primary focus:ring-1 focus:ring-primary" type="text" value="서울특별시 서초구 삼성로 123 심사관리동 4층"/>
+</div>
+</div>
+</div>
+<!-- Affiliation, Education, Career, Certification can be summarized or just show standard edit layout -->
+<div>
+<h3 class="text-label-md font-bold text-primary border-b border-primary pb-2 mb-4 flex justify-between items-center">
+<span>소속 정보</span>
+<button class="text-secondary hover:underline flex items-center gap-1" type="button"><span class="material-symbols-outlined text-[16px]">add</span>추가</button>
+</h3>
+<!-- Simplified representation for form -->
+<div class="text-body-sm text-on-surface-variant bg-surface-container-low p-3 rounded-[2px]">
+                                등록된 소속 정보를 확인하고 수정할 수 있습니다.
+                            </div>
+</div>
+<div>
+<h3 class="text-label-md font-bold text-primary border-b border-primary pb-2 mb-4 flex justify-between items-center">
+<span>학력 사항</span>
+<button class="text-secondary hover:underline flex items-center gap-1" type="button"><span class="material-symbols-outlined text-[16px]">add</span>추가</button>
+</h3>
+<div class="text-body-sm text-on-surface-variant bg-surface-container-low p-3 rounded-[2px]">
+                                등록된 학력 사항을 확인하고 수정할 수 있습니다.
+                            </div>
+</div>
+</form>
+</div>
+<!-- Modal Footer -->
+<div class="bg-surface-container-low px-6 py-4 flex justify-end gap-3 border-t border-outline-variant">
+<button class="px-5 py-2 border border-outline text-on-surface-variant text-body-md font-bold hover:bg-outline-variant/20 transition-all rounded-[2px]" onclick="closeModal()">취소</button>
+<button class="px-5 py-2 bg-secondary text-white text-body-md font-bold hover:brightness-110 transition-all rounded-[2px]" onclick="closeModal()">저장</button>
+</div>
+</div>
+</div>
+<!-- Footer -->
+<footer class="w-full bg-white border-t border-outline-variant py-8 px-margin-desktop">
+<div class="max-w-[1600px] w-full mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+<div>
+<div class="text-body-md font-bold text-primary mb-2">삼성표준인증원 (Samsung Standard Registry)</div>
+<p class="text-body-sm text-on-surface-variant mb-1">서울특별시 서초구 삼성로 123 심사관리동 4층</p>
+<p class="text-body-sm text-on-surface-variant">© 2024 Samsung Standard Registry. All rights reserved.</p>
+</div>
+<div class="flex flex-col md:text-right gap-1">
+<div class="text-label-sm text-outline uppercase tracking-widest">기술지원 및 문의</div>
+<div class="text-headline-sm font-bold text-primary">02-123-4567</div>
+<div class="text-body-sm text-on-surface-variant">평일 09:00 - 18:00 (주말 및 공휴일 제외)</div>
+</div>
+</div>
+</footer>
+<script>
+    // Micro-interaction for buttons
+    document.querySelectorAll('button:not(#toggle-more-btn)').forEach(button => {
+        button.addEventListener('mousedown', () => button.style.transform = 'scale(0.98)');
+        button.addEventListener('mouseup', () => button.style.transform = 'scale(1)');
+        button.addEventListener('mouseleave', () => button.style.transform = 'scale(1)');
+    });
+
+    // Toggle More Info
+    function toggleMoreInfo() {
+        const moreInfo = document.getElementById('more-info-section');
+        const icon = document.getElementById('toggle-icon');
+        const btn = document.getElementById('toggle-more-btn');
+        
+        if (moreInfo.classList.contains('hidden')) {
+            moreInfo.classList.remove('hidden');
+            icon.textContent = 'expand_less';
+            btn.innerHTML = `접기 <span class="material-symbols-outlined text-[18px]" id="toggle-icon">expand_less</span>`;
+        } else {
+            moreInfo.classList.add('hidden');
+            icon.textContent = 'expand_more';
+            btn.innerHTML = `더보기 <span class="material-symbols-outlined text-[18px]" id="toggle-icon">expand_more</span>`;
+        }
+    }
+
+    // Modal logic
+    const modal = document.getElementById('edit-modal');
+    const modalContent = modal.querySelector('.bg-white');
+
+    function openModal() {
+        modal.classList.remove('hidden');
+        document.body.classList.add('modal-open');
+        // trigger reflow
+        void modal.offsetWidth;
+        modal.classList.remove('opacity-0');
+        modalContent.classList.remove('scale-95');
+    }
+
+    function closeModal() {
+        modal.classList.add('opacity-0');
+        modalContent.classList.add('scale-95');
+        document.body.classList.remove('modal-open');
+        setTimeout(() => {
+            modal.classList.add('hidden');
+        }, 300);
+    }
+</script>
+</body></html>
