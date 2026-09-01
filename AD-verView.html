@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>검증보고서 조회 · SAP 심사원 플랫폼</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&amp;family=JetBrains+Mono:wght@500&amp;family=Hanken+Grotesk:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="../_common/tailwind.config.js"></script>
+<link rel="stylesheet" href="../_common/app.css"/>
+</head>
+<body class="bg-background text-on-surface font-display flex flex-col min-h-screen">
+<!-- ============================================================
+     화면ID : AD-verView
+     화면명 : 검증보고서 조회
+     경로   : 관리자 › 검증보고서 조회
+     권한   : MN MS
+     ※ 헤더·사이드바·푸터는 ../_common/layout.js 에서 주입됩니다.
+     ============================================================ -->
+<div id="screen">
+<div class="scr hidden" id="s-AD-verView" data-roles="MN MS"><div class="mb-6"><div class="text-[12px] text-outline mb-1">관리자 › 검증보고서 조회</div><div class="flex items-end gap-3 flex-wrap"><h1 class="text-[28px] leading-tight font-bold text-primary">검증보고서 조회</h1><span class="font-label-md text-[11px] text-outline border border-outline-variant px-2 py-0.5 rounded-[2px] mb-1">AD-verView</span><span class="text-[11px] font-bold text-primary bg-primary/5 border border-primary/20 px-2 py-0.5 rounded-full mb-1">시스템 입력형</span></div><p class="text-body-sm text-on-surface-variant mt-1">FN-AD-033 · 제출된 검증보고서를 확인합니다</p></div><section class="bg-white border border-outline-variant p-6 mb-6"><h3 class="flex items-center gap-2 text-body-lg font-bold text-primary mb-4"><span class="w-1 h-4 bg-secondary inline-block"></span>검증 정보</h3><div class="grid grid-cols-1 md:grid-cols-2 gap-x-10"><div class="flex gap-4 py-3 border-b border-surface-container "><div class="w-[132px] shrink-0 text-[12px] font-bold text-on-surface-variant pt-0.5">기업명</div><div class="text-body-sm text-on-surface whitespace-pre-line">에이유티 주식회사</div></div><div class="flex gap-4 py-3 border-b border-surface-container "><div class="w-[132px] shrink-0 text-[12px] font-bold text-on-surface-variant pt-0.5">인증표준</div><div class="text-body-sm text-on-surface whitespace-pre-line">ISO 22000</div></div><div class="flex gap-4 py-3 border-b border-surface-container "><div class="w-[132px] shrink-0 text-[12px] font-bold text-on-surface-variant pt-0.5">검증위원</div><div class="text-body-sm text-on-surface whitespace-pre-line">김진숙</div></div><div class="flex gap-4 py-3 border-b border-surface-container "><div class="w-[132px] shrink-0 text-[12px] font-bold text-on-surface-variant pt-0.5">검증구분</div><div class="text-body-sm text-on-surface whitespace-pre-line">1차 검증</div></div><div class="flex gap-4 py-3 border-b border-surface-container "><div class="w-[132px] shrink-0 text-[12px] font-bold text-on-surface-variant pt-0.5">검증일</div><div class="text-body-sm text-on-surface whitespace-pre-line">2026-08-28</div></div><div class="flex gap-4 py-3 border-b border-surface-container "><div class="w-[132px] shrink-0 text-[12px] font-bold text-on-surface-variant pt-0.5">판정</div><div class="text-body-sm text-on-surface whitespace-pre-line">적합</div></div></div></section><section class="bg-white border border-outline-variant p-6 mb-6"><h3 class="flex items-center gap-2 text-body-lg font-bold text-primary mb-4"><span class="w-1 h-4 bg-secondary inline-block"></span>검증 의견</h3><div class="grid grid-cols-1 md:grid-cols-2 gap-x-10"><div class="flex gap-4 py-3 border-b border-surface-container "><div class="w-[132px] shrink-0 text-[12px] font-bold text-on-surface-variant pt-0.5">의견</div><div class="text-body-sm text-on-surface whitespace-pre-line">부적합 2건에 대한 시정조치 계획이 구체적으로 제시되어 있음. 인증 유지 가능.</div></div></div></section><div class="flex justify-end gap-2"><button class="px-6 h-11 text-body-md font-bold rounded-[2px] bg-primary text-white hover:brightness-110" data-act="PDF 다운로드">PDF 다운로드</button></div></div>
+</div>
+<script src="../_common/routes.js"></script>
+<script src="../_common/layout.js"></script>
+<script src="../_common/app.js"></script>
+</body>
+</html>

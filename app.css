@@ -1,0 +1,22 @@
+body { font-family: 'Noto Sans KR', sans-serif; background-color: #f9f9ff; }
+        .sidebar-active {
+            position: relative;
+            background-color: #37466c;
+            color: #ffffff;
+            font-weight: 700;
+        }
+        .sidebar-active::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background-color: #C9A227;
+        }
+        .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #d1d5db; border-radius: 2px; }
+        .table-row-hover:hover { background-color: #f8fafc; }
+        
+        .modal-open { overflow: hidden; }
