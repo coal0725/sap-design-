@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>공지사항 상세 · SAP 심사원 플랫폼</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&amp;family=JetBrains+Mono:wght@500&amp;family=Hanken+Grotesk:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="../_common/tailwind.config.js"></script>
+<link rel="stylesheet" href="../_common/app.css"/>
+</head>
+<body class="bg-background text-on-surface font-display flex flex-col min-h-screen">
+<!-- ============================================================
+     화면ID : NT-noticeView
+     화면명 : 공지사항 상세
+     경로   : 게시판 › 공지사항 › 상세
+     권한   : PA A LA VA MN MS
+     ※ 헤더·사이드바·푸터는 ../_common/layout.js 에서 주입됩니다.
+     ============================================================ -->
+<div id="screen">
+<div class="scr hidden" id="s-NT-noticeView" data-roles="PA A LA VA MN MS"><div class="mb-6"><div class="text-[12px] text-outline mb-1">게시판 › 공지사항 › 상세</div><div class="flex items-end gap-3 flex-wrap"><h1 class="text-[28px] leading-tight font-bold text-primary">공지사항 상세</h1><span class="font-label-md text-[11px] text-outline border border-outline-variant px-2 py-0.5 rounded-[2px] mb-1">NT-noticeView</span><span class="text-[11px] font-bold text-primary bg-primary/5 border border-primary/20 px-2 py-0.5 rounded-full mb-1">시스템 입력형</span></div><p class="text-body-sm text-on-surface-variant mt-1">FN-NT-002 · 게시물 내용을 확인합니다</p></div><section class="bg-white border border-outline-variant p-6 mb-6"><h3 class="flex items-center gap-2 text-body-lg font-bold text-primary mb-4"><span class="w-1 h-4 bg-secondary inline-block"></span>게시물 정보</h3><div class="grid grid-cols-1 md:grid-cols-2 gap-x-10"><div class="flex gap-4 py-3 border-b border-surface-container "><div class="w-[132px] shrink-0 text-[12px] font-bold text-on-surface-variant pt-0.5">제목</div><div class="text-body-sm text-on-surface whitespace-pre-line">2026년 하반기 심사원 보수교육 안내</div></div><div class="flex gap-4 py-3 border-b border-surface-container "><div class="w-[132px] shrink-0 text-[12px] font-bold text-on-surface-variant pt-0.5">작성자</div><div class="text-body-sm text-on-surface whitespace-pre-line">관리자</div></div><div class="flex gap-4 py-3 border-b border-surface-container "><div class="w-[132px] shrink-0 text-[12px] font-bold text-on-surface-variant pt-0.5">등록일</div><div class="text-body-sm text-on-surface whitespace-pre-line">2026-08-20</div></div><div class="flex gap-4 py-3 border-b border-surface-container "><div class="w-[132px] shrink-0 text-[12px] font-bold text-on-surface-variant pt-0.5">조회수</div><div class="text-body-sm text-on-surface whitespace-pre-line">142</div></div></div></section><section class="bg-white border border-outline-variant p-6 mb-6"><h3 class="flex items-center gap-2 text-body-lg font-bold text-primary mb-4"><span class="w-1 h-4 bg-secondary inline-block"></span>내용</h3><div class="grid grid-cols-1 md:grid-cols-2 gap-x-10"><div class="flex gap-4 py-3 border-b border-surface-container md:col-span-2"><div class="w-[132px] shrink-0 text-[12px] font-bold text-on-surface-variant pt-0.5">본문</div><div class="text-body-sm text-on-surface whitespace-pre-line">2026년 하반기 심사원 보수교육을 아래와 같이 실시합니다.
+
+· 일시: 2026년 9월 12일(토) 09:00 ~ 18:00
+· 장소: 삼성표준인증원 대회의실
+· 대상: 자격 유효기간이 2027년 이내 만료되는 심사원
+
+참석 신청은 마이페이지에서 진행해 주시기 바랍니다.</div></div><div class="flex gap-4 py-3 border-b border-surface-container "><div class="w-[132px] shrink-0 text-[12px] font-bold text-on-surface-variant pt-0.5">첨부</div><div class="text-body-sm text-on-surface whitespace-pre-line">2026_하반기_보수교육_안내.pdf</div></div></div></section><div class="flex justify-end gap-2"><button class="px-6 h-11 text-body-md font-bold rounded-[2px] bg-white border border-outline-variant hover:bg-surface-container-low" data-act="목록" data-go="NT-notice">목록</button></div></div>
+</div>
+<script src="../_common/routes.js"></script>
+<script src="../_common/layout.js"></script>
+<script src="../_common/app.js"></script>
+</body>
+</html>

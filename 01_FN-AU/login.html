@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>로그인 · SAP 심사원 플랫폼</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&amp;family=JetBrains+Mono:wght@500&amp;family=Hanken+Grotesk:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="../_common/tailwind.config.js"></script>
+<link rel="stylesheet" href="../_common/app.css"/>
+</head>
+<body class="bg-background text-on-surface font-display">
+<!-- ============================================================
+     화면ID : login          화면명 : 로그인
+     기능정의서 : FN-AU-001
+     ※ 심사원보~마스터관리자는 로그인 후 이용, 비회원 신청은 로그인 불필요
+     ============================================================ -->
+<div id="loginview" class="fixed inset-0 z-[500] bg-gradient-to-br from-primary to-[#0f1a33] overflow-y-auto">
+  <div class="min-h-full flex items-center justify-center p-8">
+    <div class="w-full max-w-[880px] grid md:grid-cols-2 gap-0 bg-white rounded-lg overflow-hidden shadow-2xl">
+      <div class="hidden md:flex flex-col justify-between bg-primary text-white p-9">
+        <div>
+          <div class="bg-white rounded-lg px-6 py-4 inline-block mb-7"><svg class="h-7 w-auto shrink-0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="180 105 700 190" role="img" aria-label="삼성표준인증원 SSR">
+
+<path fill-rule="nonzero" fill="rgb(17.610168%, 38.821411%, 20.974731%)" fill-opacity="1" d="M 863.589844 152.238281 L 828.121094 118.996094 L 670.761719 118.996094 L 670.097656 217.492188 L 726.679688 159.398438 L 804.464844 159.398438 L 804.421875 179.796875 L 726.648438 179.796875 L 670.019531 237.898438 L 669.667969 281.003906 L 728.78125 281.003906 L 729.144531 220.199219 L 790.765625 220.199219 L 803.953125 232.558594 L 803.726562 281.003906 L 862.824219 281.003906 L 863.234375 213.046875 L 849.347656 200.035156 L 863.515625 186.996094 Z M 863.589844 152.238281 "/>
+<path fill-rule="nonzero" fill="rgb(16.943359%, 17.385864%, 32.10907%)" fill-opacity="1" d="M 650.015625 118.996094 L 484.832031 118.996094 L 448.75 152.199219 L 448.675781 186.960938 L 464.175781 201.484375 L 505.195312 159.398438 L 606.113281 159.398438 Z M 650.015625 118.996094 "/>
+<path fill-rule="nonzero" fill="rgb(16.943359%, 17.385864%, 32.10907%)" fill-opacity="1" d="M 606.074219 179.800781 L 505.308594 179.800781 L 474.628906 211.28125 L 484.144531 220.199219 L 582.417969 220.199219 L 582.375 240.601562 L 484.105469 240.601562 L 440.203125 281.003906 L 605.386719 281.003906 L 641.46875 247.800781 L 641.539062 213.039062 Z M 606.074219 179.800781 "/>
+<path fill-rule="nonzero" fill="rgb(74.424744%, 13.613892%, 16.242981%)" fill-opacity="1" d="M 446.226562 118.996094 L 281.042969 118.996094 L 244.960938 152.199219 L 244.886719 186.960938 L 260.382812 201.484375 L 301.40625 159.398438 L 402.320312 159.398438 Z M 446.226562 118.996094 "/>
+<path fill-rule="nonzero" fill="rgb(74.424744%, 13.613892%, 16.242981%)" fill-opacity="1" d="M 402.285156 179.800781 L 301.519531 179.800781 L 270.835938 211.28125 L 280.351562 220.199219 L 378.628906 220.199219 L 378.585938 240.601562 L 280.316406 240.601562 L 236.410156 281.003906 L 401.59375 281.003906 L 437.675781 247.800781 L 437.75 213.039062 Z M 402.285156 179.800781 "/>
+</svg></div>
+          <div class="text-[22px] font-bold leading-tight mb-2">SAP 심사원 플랫폼</div>
+          <div class="text-white/60 text-[13px] leading-relaxed">삼성표준인증원 인증심사 업무 시스템<br>Samsung Standard Registrar</div>
+        </div>
+        <div class="space-y-3 mt-10">
+          <div class="flex items-start gap-2.5 text-[12.5px] text-white/70">
+            <span class="material-symbols-outlined text-secondary text-[18px] shrink-0">verified_user</span>
+            <span>심사원보 · 심사원 · 선임심사원 · 검증심사원 · 관리자 · 마스터관리자<br>계정으로 로그인합니다.</span>
+          </div>
+          <div class="flex items-start gap-2.5 text-[12.5px] text-white/70">
+            <span class="material-symbols-outlined text-secondary text-[18px] shrink-0">business</span>
+            <span>인증심사 <b class="text-white">신청 기업</b>은 로그인 없이<br>신청 절차를 진행할 수 있습니다.</span>
+          </div>
+        </div>
+      </div>
+      <div class="p-9">
+        <div class="md:hidden mb-6"><svg class="h-7 w-auto shrink-0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="180 105 700 190" role="img" aria-label="삼성표준인증원 SSR">
+
+<path fill-rule="nonzero" fill="rgb(17.610168%, 38.821411%, 20.974731%)" fill-opacity="1" d="M 863.589844 152.238281 L 828.121094 118.996094 L 670.761719 118.996094 L 670.097656 217.492188 L 726.679688 159.398438 L 804.464844 159.398438 L 804.421875 179.796875 L 726.648438 179.796875 L 670.019531 237.898438 L 669.667969 281.003906 L 728.78125 281.003906 L 729.144531 220.199219 L 790.765625 220.199219 L 803.953125 232.558594 L 803.726562 281.003906 L 862.824219 281.003906 L 863.234375 213.046875 L 849.347656 200.035156 L 863.515625 186.996094 Z M 863.589844 152.238281 "/>
+<path fill-rule="nonzero" fill="rgb(16.943359%, 17.385864%, 32.10907%)" fill-opacity="1" d="M 650.015625 118.996094 L 484.832031 118.996094 L 448.75 152.199219 L 448.675781 186.960938 L 464.175781 201.484375 L 505.195312 159.398438 L 606.113281 159.398438 Z M 650.015625 118.996094 "/>
+<path fill-rule="nonzero" fill="rgb(16.943359%, 17.385864%, 32.10907%)" fill-opacity="1" d="M 606.074219 179.800781 L 505.308594 179.800781 L 474.628906 211.28125 L 484.144531 220.199219 L 582.417969 220.199219 L 582.375 240.601562 L 484.105469 240.601562 L 440.203125 281.003906 L 605.386719 281.003906 L 641.46875 247.800781 L 641.539062 213.039062 Z M 606.074219 179.800781 "/>
+<path fill-rule="nonzero" fill="rgb(74.424744%, 13.613892%, 16.242981%)" fill-opacity="1" d="M 446.226562 118.996094 L 281.042969 118.996094 L 244.960938 152.199219 L 244.886719 186.960938 L 260.382812 201.484375 L 301.40625 159.398438 L 402.320312 159.398438 Z M 446.226562 118.996094 "/>
+<path fill-rule="nonzero" fill="rgb(74.424744%, 13.613892%, 16.242981%)" fill-opacity="1" d="M 402.285156 179.800781 L 301.519531 179.800781 L 270.835938 211.28125 L 280.351562 220.199219 L 378.628906 220.199219 L 378.585938 240.601562 L 280.316406 240.601562 L 236.410156 281.003906 L 401.59375 281.003906 L 437.675781 247.800781 L 437.75 213.039062 Z M 402.285156 179.800781 "/>
+</svg></div>
+        <h1 class="text-[20px] font-bold text-primary mb-1">로그인</h1>
+        <p class="text-body-sm text-on-surface-variant mb-7">화면ID · login &nbsp;·&nbsp; FN-AU-001</p>
+        <div class="space-y-4">
+          <div>
+            <label class="block text-[12px] font-bold text-on-surface-variant mb-1.5">아이디</label>
+            <input id="loginId" class="w-full h-11 px-3 border border-outline-variant rounded-[2px] text-body-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/10" placeholder="아이디를 입력하세요">
+          </div>
+          <div>
+            <label class="block text-[12px] font-bold text-on-surface-variant mb-1.5">비밀번호</label>
+            <input id="loginPw" type="password" class="w-full h-11 px-3 border border-outline-variant rounded-[2px] text-body-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/10" placeholder="비밀번호를 입력하세요">
+          </div>
+          <div>
+            <label class="block text-[12px] font-bold text-on-surface-variant mb-1.5">권한 (시연용)</label>
+            <select id="loginRole" class="w-full h-11 px-3 border border-outline-variant rounded-[2px] text-body-sm bg-white"><option value="PA">심사원보</option><option value="A">심사원</option><option value="LA">선임심사원</option><option value="VA">검증심사원</option><option value="MN">일반관리자</option><option value="MS">마스터관리자</option></select>
+          </div>
+          <button id="loginBtn" class="w-full h-12 bg-primary text-white font-bold rounded-[2px] hover:brightness-110 transition-all">로그인</button>
+          <div id="loginErr" class="hidden text-[12.5px] text-error font-medium">아이디와 비밀번호를 입력해주세요.</div>
+        </div>
+        <div class="mt-6 pt-5 border-t border-surface-container text-[12.5px] text-on-surface-variant space-y-1.5">
+          <div>계정 문의 · 삼성표준인증원 인증사업팀 02-000-0000</div>
+          <button class="text-primary font-bold hover:underline" id="toGuest">기업 인증심사 신청 (로그인 없이 진행) →</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="../_common/routes.js"></script>
+<script>
+var LANDING = {PA:'MY-mp', A:'MY-mp', LA:'MY-mp', VA:'MY-mp', MN:'CM-dash', MS:'CM-dash'};
+function go(){
+  var id=document.getElementById('loginId').value.trim();
+  var pw=document.getElementById('loginPw').value.trim();
+  var err=document.getElementById('loginErr');
+  if(!id||!pw){ err.classList.remove('hidden'); return; }
+  err.classList.add('hidden');
+  var role=document.getElementById('loginRole').value;
+  try{ sessionStorage.setItem('ssr.role',role); sessionStorage.setItem('ssr.authed','1'); }catch(e){}
+  var b=document.getElementById('loginBtn'); b.textContent='로그인 중입니다…'; b.disabled=true;
+  setTimeout(function(){ location.href = ROUTES[LANDING[role]||'MY-mp']; }, 700);
+}
+document.getElementById('loginBtn').addEventListener('click', go);
+document.getElementById('loginPw').addEventListener('keydown', function(e){ if(e.key==='Enter') go(); });
+var tg=document.getElementById('toGuest');
+if(tg) tg.addEventListener('click', function(){
+  try{ sessionStorage.setItem('ssr.role','G'); sessionStorage.setItem('ssr.authed','0'); }catch(e){}
+  location.href = ROUTES['AP-welcome'];
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,760 @@
+[
+ {
+  "key": "AP-bAppl",
+  "roles": [
+   "G"
+  ],
+  "folder": "03_FN-AP",
+  "file": "AP-bAppl.html",
+  "title": "인증심사 신청서",
+  "crumb": "기업 인증신청 › 1. 신청서 작성"
+ },
+ {
+  "key": "AP-bQ",
+  "roles": [
+   "G"
+  ],
+  "folder": "03_FN-AP",
+  "file": "AP-bQ.html",
+  "title": "인증심사 설문서",
+  "crumb": "기업 인증신청 › 2. 설문서 작성"
+ },
+ {
+  "key": "AP-bCont",
+  "roles": [
+   "G"
+  ],
+  "folder": "03_FN-AP",
+  "file": "AP-bCont.html",
+  "title": "인증심사 계약서",
+  "crumb": "기업 인증신청 › 4. 계약서 작성"
+ },
+ {
+  "key": "AP-bFile",
+  "roles": [
+   "G"
+  ],
+  "folder": "03_FN-AP",
+  "file": "AP-bFile.html",
+  "title": "첨부서류 업로드",
+  "crumb": "기업 인증신청 › 첨부서류 업로드"
+ },
+ {
+  "key": "AP-bEnd",
+  "roles": [
+   "G"
+  ],
+  "folder": "03_FN-AP",
+  "file": "AP-bEnd.html",
+  "title": "신청 완료",
+  "crumb": "기업 인증신청 › 5. 신청 완료"
+ },
+ {
+  "key": "CH-scopeAppl",
+  "roles": [
+   "G"
+  ],
+  "folder": "04_FN-CH",
+  "file": "CH-scopeAppl.html",
+  "title": "인증범위 변경신청서",
+  "crumb": "인증변경 › 인증범위 변경"
+ },
+ {
+  "key": "MY-mp",
+  "roles": [
+   "PA",
+   "A",
+   "LA",
+   "VA",
+   "MN",
+   "MS"
+  ],
+  "folder": "02_FN-MY",
+  "file": "MY-mp.html",
+  "title": "마이페이지",
+  "crumb": "마이페이지"
+ },
+ {
+  "key": "MY-mpUpdate",
+  "roles": [
+   "PA",
+   "A",
+   "LA",
+   "VA",
+   "MN",
+   "MS"
+  ],
+  "folder": "02_FN-MY",
+  "file": "MY-mpUpdate.html",
+  "title": "기본정보 수정",
+  "crumb": "마이페이지 › 기본정보 수정"
+ },
+ {
+  "key": "MY-certLog",
+  "roles": [
+   "PA",
+   "A",
+   "LA",
+   "VA",
+   "MN",
+   "MS"
+  ],
+  "folder": "02_FN-MY",
+  "file": "MY-certLog.html",
+  "title": "자격신청 처리내역",
+  "crumb": "마이페이지 › 자격신청 처리내역"
+ },
+ {
+  "key": "MY-certAdd",
+  "roles": [
+   "PA",
+   "A",
+   "LA",
+   "VA",
+   "MN",
+   "MS"
+  ],
+  "folder": "02_FN-MY",
+  "file": "MY-certAdd.html",
+  "title": "자격 신규신청",
+  "crumb": "마이페이지 › 자격 신규신청"
+ },
+ {
+  "key": "MY-codeLog",
+  "roles": [
+   "PA",
+   "A",
+   "LA",
+   "VA",
+   "MN",
+   "MS"
+  ],
+  "folder": "02_FN-MY",
+  "file": "MY-codeLog.html",
+  "title": "코드신청 처리내역",
+  "crumb": "마이페이지 › 코드신청 처리내역"
+ },
+ {
+  "key": "SC-mCal",
+  "roles": [
+   "PA",
+   "A",
+   "LA",
+   "VA"
+  ],
+  "folder": "05_FN-SC",
+  "file": "SC-mCal.html",
+  "title": "심사일정",
+  "crumb": "심사관리 › 심사일정"
+ },
+ {
+  "key": "RP-repList",
+  "roles": [
+   "PA",
+   "A",
+   "LA",
+   "VA"
+  ],
+  "folder": "06_FN-RP",
+  "file": "RP-repList.html",
+  "title": "보고서 목록",
+  "crumb": "심사관리 › 보고서 목록"
+ },
+ {
+  "key": "RP-repWrite",
+  "roles": [
+   "PA",
+   "A",
+   "LA",
+   "VA"
+  ],
+  "folder": "06_FN-RP",
+  "file": "RP-repWrite.html",
+  "title": "심사보고서 작성",
+  "crumb": "심사관리 › 보고서 작성"
+ },
+ {
+  "key": "RP-repView",
+  "roles": [
+   "PA",
+   "A",
+   "LA",
+   "VA"
+  ],
+  "folder": "06_FN-RP",
+  "file": "RP-repView.html",
+  "title": "보고서 열람",
+  "crumb": "심사관리 › 보고서 열람"
+ },
+ {
+  "key": "VR-verList",
+  "roles": [
+   "VA"
+  ],
+  "folder": "07_FN-VR",
+  "file": "VR-verList.html",
+  "title": "검증보고서 목록",
+  "crumb": "검증관리 › 검증보고서 목록"
+ },
+ {
+  "key": "VR-verWrite",
+  "roles": [
+   "VA"
+  ],
+  "folder": "07_FN-VR",
+  "file": "VR-verWrite.html",
+  "title": "검증보고서 작성",
+  "crumb": "검증관리 › 검증보고서 작성"
+ },
+ {
+  "key": "NT-notice",
+  "roles": [
+   "PA",
+   "A",
+   "LA",
+   "VA",
+   "MN",
+   "MS"
+  ],
+  "folder": "08_FN-NT",
+  "file": "NT-notice.html",
+  "title": "공지사항",
+  "crumb": "게시판 › 공지사항"
+ },
+ {
+  "key": "NT-noticeView",
+  "roles": [
+   "PA",
+   "A",
+   "LA",
+   "VA",
+   "MN",
+   "MS"
+  ],
+  "folder": "08_FN-NT",
+  "file": "NT-noticeView.html",
+  "title": "공지사항 상세",
+  "crumb": "게시판 › 공지사항 › 상세"
+ },
+ {
+  "key": "NT-docu",
+  "roles": [
+   "PA",
+   "A",
+   "LA",
+   "VA",
+   "MN",
+   "MS"
+  ],
+  "folder": "08_FN-NT",
+  "file": "NT-docu.html",
+  "title": "절차 및 서식",
+  "crumb": "게시판 › 절차 및 서식"
+ },
+ {
+  "key": "CM-dash",
+  "roles": [
+   "MN",
+   "MS"
+  ],
+  "folder": "11_FN-CM",
+  "file": "CM-dash.html",
+  "title": "관리자 대시보드",
+  "crumb": "관리자 › 대시보드"
+ },
+ {
+  "key": "AD-audTable",
+  "roles": [
+   "MN",
+   "MS"
+  ],
+  "folder": "09_FN-AD",
+  "file": "AD-audTable.html",
+  "title": "심사원정보",
+  "crumb": "관리자 › 심사원정보"
+ },
+ {
+  "key": "AD-audView",
+  "roles": [
+   "MN",
+   "MS"
+  ],
+  "folder": "09_FN-AD",
+  "file": "AD-audView.html",
+  "title": "심사원정보 상세",
+  "crumb": "관리자 › 심사원정보 › 상세"
+ },
+ {
+  "key": "AD-audAdd",
+  "roles": [
+   "MN",
+   "MS"
+  ],
+  "folder": "09_FN-AD",
+  "file": "AD-audAdd.html",
+  "title": "심사원 계정생성",
+  "crumb": "관리자 › 심사원 계정생성"
+ },
+ {
+  "key": "AD-certReq",
+  "roles": [
+   "MN",
+   "MS"
+  ],
+  "folder": "09_FN-AD",
+  "file": "AD-certReq.html",
+  "title": "자격/코드 신청 목록",
+  "crumb": "관리자 › 자격/코드 신청"
+ },
+ {
+  "key": "AD-applList",
+  "roles": [
+   "MN",
+   "MS"
+  ],
+  "folder": "09_FN-AD",
+  "file": "AD-applList.html",
+  "title": "인증신청 목록",
+  "crumb": "관리자 › 인증신청 목록"
+ },
+ {
+  "key": "AD-bTable",
+  "roles": [
+   "MN",
+   "MS"
+  ],
+  "folder": "09_FN-AD",
+  "file": "AD-bTable.html",
+  "title": "기업정보 목록",
+  "crumb": "관리자 › 기업정보"
+ },
+ {
+  "key": "AD-scheTable",
+  "roles": [
+   "MN",
+   "MS"
+  ],
+  "folder": "09_FN-AD",
+  "file": "AD-scheTable.html",
+  "title": "심사일정 관리",
+  "crumb": "관리자 › 심사일정 관리"
+ },
+ {
+  "key": "AD-scheAdd",
+  "roles": [
+   "MN",
+   "MS"
+  ],
+  "folder": "09_FN-AD",
+  "file": "AD-scheAdd.html",
+  "title": "심사일정 등록",
+  "crumb": "관리자 › 심사일정 등록"
+ },
+ {
+  "key": "AD-teamAssign",
+  "roles": [
+   "MN",
+   "MS"
+  ],
+  "folder": "09_FN-AD",
+  "file": "AD-teamAssign.html",
+  "title": "심사팀 배정",
+  "crumb": "관리자 › 심사팀 배정"
+ },
+ {
+  "key": "AD-contWrite",
+  "roles": [
+   "MN",
+   "MS"
+  ],
+  "folder": "09_FN-AD",
+  "file": "AD-contWrite.html",
+  "title": "계약검토서 작성",
+  "crumb": "관리자 › 인증·심사 관리 › 계약검토서 작성"
+ },
+ {
+  "key": "AD-docSend",
+  "roles": [
+   "MN",
+   "MS"
+  ],
+  "folder": "09_FN-AD",
+  "file": "AD-docSend.html",
+  "title": "서류발송",
+  "crumb": "관리자 › 서류발송"
+ },
+ {
+  "key": "AD-repMng",
+  "roles": [
+   "MN",
+   "MS"
+  ],
+  "folder": "09_FN-AD",
+  "file": "AD-repMng.html",
+  "title": "보고서 관리",
+  "crumb": "관리자 › 보고서 관리"
+ },
+ {
+  "key": "AD-verAssign",
+  "roles": [
+   "MN",
+   "MS"
+  ],
+  "folder": "09_FN-AD",
+  "file": "AD-verAssign.html",
+  "title": "검증위원 배정",
+  "crumb": "관리자 › 검증위원 배정"
+ },
+ {
+  "key": "AD-certMng",
+  "roles": [
+   "MN",
+   "MS"
+  ],
+  "folder": "09_FN-AD",
+  "file": "AD-certMng.html",
+  "title": "인증서 관리",
+  "crumb": "관리자 › 인증서 관리"
+ },
+ {
+  "key": "AD-certInput",
+  "roles": [
+   "MN",
+   "MS"
+  ],
+  "folder": "09_FN-AD",
+  "file": "AD-certInput.html",
+  "title": "인증서 정보 입력",
+  "crumb": "관리자 › 인증서 정보 입력"
+ },
+ {
+  "key": "MA-sysCfg",
+  "roles": [
+   "MN",
+   "MS"
+  ],
+  "folder": "10_FN-MA",
+  "file": "MA-sysCfg.html",
+  "title": "시스템 설정",
+  "crumb": "마스터관리자 › 시스템 설정"
+ },
+ {
+  "key": "AD-applView",
+  "roles": [
+   "MN",
+   "MS"
+  ],
+  "folder": "09_FN-AD",
+  "file": "AD-applView.html",
+  "title": "인증신청 상세",
+  "crumb": "관리자 › 인증신청 › 상세"
+ },
+ {
+  "key": "AD-scheView",
+  "roles": [
+   "MN",
+   "MS"
+  ],
+  "folder": "09_FN-AD",
+  "file": "AD-scheView.html",
+  "title": "심사일정 상세",
+  "crumb": "관리자 › 심사일정 › 상세"
+ },
+ {
+  "key": "AD-contView",
+  "roles": [
+   "MN",
+   "MS"
+  ],
+  "folder": "09_FN-AD",
+  "file": "AD-contView.html",
+  "title": "계약검토서 상세",
+  "crumb": "관리자 › 계약검토서 › 상세"
+ },
+ {
+  "key": "AD-bView",
+  "roles": [
+   "MN",
+   "MS"
+  ],
+  "folder": "09_FN-AD",
+  "file": "AD-bView.html",
+  "title": "기업정보 상세",
+  "crumb": "관리자 › 기업정보 › 상세"
+ },
+ {
+  "key": "AD-bUpdate",
+  "roles": [
+   "MN",
+   "MS"
+  ],
+  "folder": "09_FN-AD",
+  "file": "AD-bUpdate.html",
+  "title": "기업정보 수정",
+  "crumb": "관리자 › 기업정보 › 수정"
+ },
+ {
+  "key": "AD-audUpdate",
+  "roles": [
+   "MN",
+   "MS"
+  ],
+  "folder": "09_FN-AD",
+  "file": "AD-audUpdate.html",
+  "title": "심사원정보 수정",
+  "crumb": "관리자 › 심사원정보 › 수정"
+ },
+ {
+  "key": "AD-certReqView",
+  "roles": [
+   "MN",
+   "MS"
+  ],
+  "folder": "09_FN-AD",
+  "file": "AD-certReqView.html",
+  "title": "자격/코드 신청 상세",
+  "crumb": "관리자 › 자격/코드 신청 › 상세"
+ },
+ {
+  "key": "AD-adminVer",
+  "roles": [
+   "MN",
+   "MS"
+  ],
+  "folder": "09_FN-AD",
+  "file": "AD-adminVer.html",
+  "title": "행정검증 작성",
+  "crumb": "관리자 › 행정검증"
+ },
+ {
+  "key": "AD-verView",
+  "roles": [
+   "MN",
+   "MS"
+  ],
+  "folder": "09_FN-AD",
+  "file": "AD-verView.html",
+  "title": "검증보고서 조회",
+  "crumb": "관리자 › 검증보고서 조회"
+ },
+ {
+  "key": "AD-certHist",
+  "roles": [
+   "MN",
+   "MS"
+  ],
+  "folder": "09_FN-AD",
+  "file": "AD-certHist.html",
+  "title": "인증서 이력",
+  "crumb": "관리자 › 인증서 관리 › 이력"
+ },
+ {
+  "key": "NT-docuView",
+  "roles": [
+   "PA",
+   "A",
+   "LA",
+   "VA",
+   "MN",
+   "MS"
+  ],
+  "folder": "08_FN-NT",
+  "file": "NT-docuView.html",
+  "title": "절차/서식 상세",
+  "crumb": "게시판 › 절차 및 서식 › 상세"
+ },
+ {
+  "key": "AP-welcome",
+  "roles": [
+   "G"
+  ],
+  "folder": "03_FN-AP",
+  "file": "AP-welcome.html",
+  "title": "인증심사 신청",
+  "crumb": "기업 인증신청"
+ },
+ {
+  "key": "AD-billWrite",
+  "roles": [
+   "MN",
+   "MS"
+  ],
+  "folder": "09_FN-AD",
+  "file": "AD-billWrite.html",
+  "title": "비용 제안서 작성",
+  "crumb": "관리자 › 인증·심사 관리 › 비용 제안서"
+ },
+ {
+  "key": "AD-propWrite",
+  "roles": [
+   "MN",
+   "MS"
+  ],
+  "folder": "09_FN-AD",
+  "file": "AD-propWrite.html",
+  "title": "심사 안내서 작성",
+  "crumb": "관리자 › 인증·심사 관리 › 심사 안내서"
+ },
+ {
+  "key": "AD-scheCal",
+  "roles": [
+   "MN",
+   "MS"
+  ],
+  "folder": "09_FN-AD",
+  "file": "AD-scheCal.html",
+  "title": "심사일정 캘린더",
+  "crumb": "관리자 › 인증·심사 관리 › 심사일정 캘린더"
+ },
+ {
+  "key": "AD-delib",
+  "roles": [
+   "MN",
+   "MS"
+  ],
+  "folder": "09_FN-AD",
+  "file": "AD-delib.html",
+  "title": "인증결정 (심의보고서)",
+  "crumb": "관리자 › 보고서·인증서 › 인증결정"
+ },
+ {
+  "key": "AD-resultNoti",
+  "roles": [
+   "MN",
+   "MS"
+  ],
+  "folder": "09_FN-AD",
+  "file": "AD-resultNoti.html",
+  "title": "심사결과 통보",
+  "crumb": "관리자 › 보고서·인증서 › 심사결과 통보"
+ },
+ {
+  "key": "AD-cancelDoc",
+  "roles": [
+   "MN",
+   "MS"
+  ],
+  "folder": "09_FN-AD",
+  "file": "AD-cancelDoc.html",
+  "title": "인증 정지·취소 공문",
+  "crumb": "관리자 › 보고서·인증서 › 정지·취소 공문"
+ },
+ {
+  "key": "AD-survey",
+  "roles": [
+   "MN",
+   "MS"
+  ],
+  "folder": "09_FN-AD",
+  "file": "AD-survey.html",
+  "title": "고객 만족도 조사",
+  "crumb": "관리자 › 보고서·인증서 › 고객 만족도"
+ },
+ {
+  "key": "AD-complaint",
+  "roles": [
+   "MN",
+   "MS"
+  ],
+  "folder": "09_FN-AD",
+  "file": "AD-complaint.html",
+  "title": "불만·이의제기 접수",
+  "crumb": "관리자 › 보고서·인증서 › 불만·이의제기"
+ },
+ {
+  "key": "AD-defer",
+  "roles": [
+   "MN",
+   "MS"
+  ],
+  "folder": "09_FN-AD",
+  "file": "AD-defer.html",
+  "title": "인증심사 유예신청",
+  "crumb": "관리자 › 인증·심사 관리 › 심사 유예"
+ },
+ {
+  "key": "MA-terms",
+  "roles": [
+   "MN",
+   "MS"
+  ],
+  "folder": "10_FN-MA",
+  "file": "MA-terms.html",
+  "title": "계약서 약관 관리",
+  "crumb": "마스터관리자 › 계약서 약관 관리"
+ },
+ {
+  "key": "MY-codeAdd",
+  "roles": [
+   "PA",
+   "A",
+   "LA",
+   "VA"
+  ],
+  "folder": "02_FN-MY",
+  "file": "MY-codeAdd.html",
+  "title": "코드 신규신청",
+  "crumb": "마이페이지 › 코드신청 처리내역 › 코드 신규신청"
+ },
+ {
+  "key": "MA-docList",
+  "roles": [
+   "MN",
+   "MS"
+  ],
+  "folder": "10_FN-MA",
+  "file": "MA-docList.html",
+  "title": "문서 문구 관리",
+  "crumb": "시스템 › 문서 문구 관리"
+ },
+ {
+  "key": "MA-docEdit",
+  "roles": [
+   "MN",
+   "MS"
+  ],
+  "folder": "10_FN-MA",
+  "file": "MA-docEdit.html",
+  "title": "문서 문구 수정",
+  "crumb": "시스템 › 문서 문구 관리 › 수정"
+ },
+ {
+  "key": "SC-propView",
+  "roles": [
+   "PA",
+   "A",
+   "LA",
+   "VA"
+  ],
+  "folder": "05_FN-SC",
+  "file": "SC-propView.html",
+  "title": "심사 안내서 조회",
+  "crumb": "심사관리 › 심사일정 › 심사 안내서"
+ },
+ {
+  "key": "RP-repDoc",
+  "roles": [
+   "PA",
+   "A",
+   "LA",
+   "VA",
+   "MN",
+   "MS"
+  ],
+  "folder": "06_FN-RP",
+  "file": "RP-repDoc.html",
+  "title": "심사 문서 작성",
+  "crumb": "심사관리 › 보고서 작성 › 심사 문서 세트"
+ },
+ {
+  "key": "AD-noticeSend",
+  "roles": [
+   "MN",
+   "MS"
+  ],
+  "folder": "09_FN-AD",
+  "file": "AD-noticeSend.html",
+  "title": "공지사항 등급별 발송",
+  "crumb": "게시판 › 공지사항 › 등급별 발송"
+ }
+]
